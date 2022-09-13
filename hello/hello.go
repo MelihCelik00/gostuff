@@ -2,11 +2,11 @@ package main
 
 import (
 	"fmt"
-
-	"github.com/MelihCelik00/gostuff/greet/greetings"
+	
+	"example.com/greetings"
 )
 
 func main(){
-	msg:= greetings.Hello("Gladys")
+	msg:= greetings.Hello("Melih")
 	fmt.Println(msg)
 }
