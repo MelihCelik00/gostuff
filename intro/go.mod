@@ -1,3 +1,3 @@
-module github.com/MelihCelik00/intro/gostuff
+module github.com/MelihCelik00/gostuff/intro/gostuff
 
 go 1.19
