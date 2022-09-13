@@ -13,6 +13,7 @@ func Hello(name string) (string,error) {
 		return "", errors.New("empty name")
 	}
 	msg:=fmt.Sprintf(randomFormat(), name)
+	// msg := fmt.Sprintf(randomFormat()) // break code with this line
 	return msg, nil
 }
 
