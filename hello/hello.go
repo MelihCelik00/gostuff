@@ -24,4 +24,19 @@ func main() {
 	}
 
 	fmt.Println(message)
+	fmt.Println("-----------------")
+
+	names := []string{"Melih", "Safa", "Çelik"}
+
+	messages, err := greetings.Hellos(names)
+
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	fmt.Println(messages)
+
+	for _, value := range messages {
+		fmt.Println(value)
+	}
 }
