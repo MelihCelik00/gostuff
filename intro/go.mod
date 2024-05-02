@@ -1,3 +1,3 @@
-module github.com/MelihCelik00/gostuff/intro/
+module github.com/MelihCelik00/gostuff/intro
 
-go 1.19
+go 1.22.2

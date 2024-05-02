@@ -2,20 +2,26 @@ package main
 
 import (
 	"fmt"
-	"log"
+
+	"rsc.io/quote/v4"
 
 	"example.com/greetings"
+
+	"log"
 )
 
-func main(){
+func main() {
+	fmt.Println(quote.Go())
+
 	log.SetPrefix("greetings: ")
 	log.SetFlags(0)
+	// log.SetFlags(3)
 
-	names := []string{"Gladys", "Melih", "Darrin"}
-	msg, err := greetings.Hellos(names)
-	if err != nil {
-		log.Fatal(err)
+	message, status := greetings.Hello("Melih")
+
+	if status != nil { // nil means no error, success!
+		log.Fatal(status)
 	}
 
-	fmt.Println(msg)
+	fmt.Println(message)
 }

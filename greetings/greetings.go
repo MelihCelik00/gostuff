@@ -4,42 +4,25 @@ import (
 	"errors"
 	"fmt"
 	"math/rand"
-	"time"
 )
 
-// Hello returns a greeting for the named person.
-func Hello(name string) (string,error) {
+func Hello(name string) (string, error) {
+
 	if name == "" {
-		return "", errors.New("empty name")
+		return "", errors.New("name not found")
 	}
-	msg:=fmt.Sprintf(randomFormat(), name)
-	// msg := fmt.Sprintf(randomFormat()) // break code with this line
-	return msg, nil
-}
 
-func Hellos (names []string) (map[string]string, error) {
-	messages := make(map[string]string)
-	for _, name := range names {
-		message, err := Hello(name)
-		if err != nil {
-			return nil, err
-		}
-		messages[name] = message
-	}
-	return messages, nil
-}
-
-func init() {
-	rand.Seed(time.Now().UnixNano())
+	message := fmt.Sprintf(randomFormat(), name)
+	return message, nil
 }
 
 func randomFormat() string {
+
 	formats := []string{
-		"Hi, %v. Welcome!",
-		"Great to see you, %v!",
-		"Hail, %v! Well met!",
+		"Hi, %s. Welcome!",
+		"Great to see you, %s!",
+		"Hail, %s! Well met!",
 	}
 
 	return formats[rand.Intn(len(formats))]
 }
-
